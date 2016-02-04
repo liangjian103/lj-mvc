@@ -7,17 +7,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.lj.beans.Result;
+
 @Configuration
 @ComponentScan
 public class TestService {
 
 	@Autowired
-	LoginService loginService;
+	UserService userService;
 	
 	private void login(){
 		try {
-			boolean boo = loginService.lonin("LiangJian", "123456");
-			System.out.println(boo);
+			Result rs = userService.loginCheck("LiangJian", "123456");
+			System.out.println(rs);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

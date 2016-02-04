@@ -1,6 +1,6 @@
 package com.lj.dao;
 
-import com.lj.beans.UserBean;
+import com.lj.beans.TbUser;
 
 
 /**
@@ -12,5 +12,9 @@ import com.lj.beans.UserBean;
 public interface UserDao {
 
 	/** 查询用户信息 */
-	UserBean queryUserByUserNamePassword(String userName, String password) throws Exception;
+	TbUser selectTbUserByUserName(String username);
+	
+	/** 插入用户 */
+	void insertTbUser(TbUser tbUser) throws Exception;
+
 }
